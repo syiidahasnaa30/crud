@@ -20,7 +20,7 @@ class CreateJawabanTable extends Migration
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrent();
             $table->bigInteger('id_pertanyaan')->unsigned();
-            $table->foreign('id_pertanyaan')->references('id')->on('pertanyaan');
+            $table->foreign('id_pertanyaan')->references('id')->on('pertanyaan')->onDelete('cascade');
         });
     }
 

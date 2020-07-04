@@ -21,4 +21,8 @@ class PertanyaanController extends Controller
         $data = PertanyaanModels::save($request->all());
         return redirect('/pertanyaan');
     }
+    public function edit($id){
+        $pertanyaan=PertanyaanModels::find_by_id($id);
+        return view('pertanyaan.edit', compact('pertanyaan'));
+    }
 }

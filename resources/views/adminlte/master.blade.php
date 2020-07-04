@@ -45,6 +45,7 @@
             @yield('indexPertanyaan')
             @yield('index_jawaban')
             @yield('formJawaban')
+            @yield('editPertanyaan')
         </div>
         <!-- /.content-wrapper -->
 

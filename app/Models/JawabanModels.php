@@ -13,14 +13,13 @@ class JawabanModels
     }
     public static function save($data)
     {
-        unset($data["_token"]);
-        unset($data["submit"]);
         $new_jawaban = DB::table('jawaban')->insert($data);
         return $new_jawaban;
     }
-    public static function find_by_id_pertanyaan($id){
-        
-        $data= DB ::table('jawaban')->where('id_pertanyaan',$id)->get();
+    public static function find_by_id_pertanyaan($id)
+    {
+
+        $data = DB::table('jawaban')->where('id_pertanyaan', $id)->get();
         return $data;
     }
 }

@@ -26,9 +26,13 @@ Route::get('/halo/{nama}', function ($nama) {
 Route::get('/', "Homecontroller@home");
 Route::get('/register', 'Authcontroller@register');
 Route::post('/welcome', 'Authcontroller@welcome');
+
 Route::get('/pertanyaan', 'PertanyaanController@index');
 Route::get('/pertanyaan/create', 'PertanyaanController@create');
 Route::post('/pertanyaan', 'PertanyaanController@store');
+Route::get('/pertanyaan/answer/{pertanyaan_id}', 'JawabanController@create');
+Route::get('/pertanyaan/edit/{pertanyaan_id}','PertanyaanController@edit');
+
 Route::get('/jawaban/{pertanyaan_id}', 'JawabanController@index');
-//Route::get('/pertanyaan/answer/{pertanyaan_id}', 'JawabanController@create');
-Route::post('/jawaban/{pertanyaan_id}', 'JawabanController@store')
+
+Route::post('/jawaban/{pertanyaan_id}', 'JawabanController@store');
