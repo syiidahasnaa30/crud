@@ -20,9 +20,14 @@ class PertanyaanModels
         $new_pertanyaan = DB::table('pertanyaan')->insert($data);
         return $new_pertanyaan;
     }
-    public static function find_by_id($id){
-        
-        $data= DB ::table('pertanyaan')->where('id',$id)->first();
+    public static function find_by_id($id)
+    {
+        $data = DB::table('pertanyaan')->where('id', $id)->first();
         return $data;
+    }
+    public static function editing($data)
+    {
+        $new_pertanyaan = DB::table('pertanyaan')->where('id', $data["id"])->update($data);
+        return $new_pertanyaan;
     }
 }

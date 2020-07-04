@@ -32,6 +32,7 @@
                     <td><a href="/jawaban/{{ $tanya->id }}" class="badge bg-success">lihat jawaban</a>
                         <a href="/pertanyaan/edit/{{ $tanya->id }}" class="badge bg-warning">Edit</a>
                         <a href="/pertanyaan/delete/{{ $tanya->id }}" class="badge bg-danger">Hapus</a>
+                        <a href="/pertanyaan/{{ $tanya->id }}" class="badge bg-info">detail</a>
                     </td>
                 </tr>
                 @endforeach

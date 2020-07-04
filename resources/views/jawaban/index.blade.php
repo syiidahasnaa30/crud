@@ -11,9 +11,10 @@
                 <tr>
                     <th style="width: 10px">#</th>
                     <th style="width:200px">Judul</th>
-                    <th>Isi</th>
+                    <th>Jawaban</th>
                     <th style="width:160px">Waktu</th>
-                    <th style="width:120px">Aksi Jawaban</th>
+                    <th style="width:50px">Edit</th>
+                    <th style="width:50px">Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,8 +25,12 @@
                     <td>{{ $tanya->isi }}</td>
                     <td>{{ $tanya->created_at }}</td>
                     <td>
-                        <a href="/jawaban/edit/{{ $tanya->id }}" class="badge bg-warning">Edit</a>
-                        <a href="/jawaban/delete/{{ $tanya->id }}" class="badge bg-danger">Hapus</a>
+                        <a href="/jawaban/{{ $tanya->id }}" class="badge bg-warning">Edit</a>
+                    </td><td> <form action="/jawaban/delete/{{$tanya->id }}" method="post">
+                           @csrf
+                           @method('DELETE')
+                           <button class="badge bg-danger">Delete</button>
+                       </form>
                     </td>
                 </tr>
                 @endforeach
@@ -34,7 +39,6 @@
         </table>
     </div>
     <div class="ml-3">
-        <a href="/pertanyaan/answer/{{ $tanya->id_pertanyaan }}"class="btn btn-sm btn-success">Tulis Jawabanmu</a>
         <a href="/pertanyaan" class="btn btn-sm btn-primary">Daftar Pertanyaan</a>
     </div>
     <!-- /.card-body -->

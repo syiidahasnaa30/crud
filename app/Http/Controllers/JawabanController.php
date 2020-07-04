@@ -19,4 +19,16 @@ class JawabanController extends Controller
       JawabanModels::save($data);
       return redirect('/jawaban/' . $id_pertanyaan);
    }
+   public function edit($id)
+   {
+      $jawaban = JawabanModels::find_by_id($id);
+      return view('jawaban.edit', compact('jawaban'));
+   }
+   public function update($id, Request $request)
+   {
+      $data = $request->all();
+      unset($data["_token"]);
+      $jawaban = JawabanModels::editing($data);
+      return redirect('/pertanyaan');
+   }
 }
