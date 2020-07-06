@@ -11,8 +11,6 @@
 |
 */
 
-use Illuminate\Routing\Route;
-
 Route::get('/home', function () {
     return view('welcome');
 });
@@ -34,9 +32,11 @@ Route::get('/pertanyaan/create', 'PertanyaanController@create');
 Route::post('/pertanyaan', 'PertanyaanController@store');
 Route::get('/pertanyaan/{id}', 'PertanyaanController@show');
 Route::get('/pertanyaan/edit/{pertanyaan_id}', 'PertanyaanController@edit');
-Route::post('/pertanyaan/edit/{pertanyaan_id}', 'PertanyaanController@update');
-Route::delete('/pertayaan/{pertanyaan_id}');
+Route::put('/pertanyaan/{id}', 'PertanyaanController@update');
+Route::delete('/pertayaan/{id}', 'PertanyaanController@destroy');
+
 Route::get('/jawaban/{pertanyaan_id}', 'JawabanController@index');
 Route::post('/jawaban/{pertanyaan_id}', 'JawabanController@store');
-Route::get('/jawaban/edit/{pertanyaan_id}', 'JawabanController@edit');
-Route::POST('/jawaban/edit/{pertanyaan_id}', 'JawabanController@update');
+Route::get('/jawaban/edit/{jawaban_id}', 'JawabanController@edit');
+Route::put('/jawaban/{jawaban_id}', 'JawabanController@update');
+Route::delete('/jawaban/{jawaban_id}', 'JawabanController@destroy');

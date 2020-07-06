@@ -13,8 +13,7 @@
                     <th style="width:200px">Judul</th>
                     <th>Jawaban</th>
                     <th style="width:160px">Waktu</th>
-                    <th style="width:50px">Edit</th>
-                    <th style="width:50px">Delete</th>
+                    <th style="width:80px">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -25,16 +24,16 @@
                     <td>{{ $tanya->isi }}</td>
                     <td>{{ $tanya->created_at }}</td>
                     <td>
-                        <a href="/jawaban/{{ $tanya->id }}" class="badge bg-warning">Edit</a>
-                    </td><td> <form action="/jawaban/delete/{{$tanya->id }}" method="post">
-                           @csrf
-                           @method('DELETE')
-                           <button class="badge bg-danger">Delete</button>
-                       </form>
+                        <a href="/jawaban/edit/{{ $tanya->id }}" class="badge bg-warning"><i class="fas fa-edit"></i></a>
+                        <form action="/jawaban/{{$tanya->id }}" method="post" style="display: inline">
+                            @csrf
+                            @method('DELETE')
+                            <button class="badge bg-danger"><i class="fas fa-trash"></i></button>
+                        </form>
                     </td>
                 </tr>
                 @endforeach
-                
+
             </tbody>
         </table>
     </div>

@@ -6,16 +6,18 @@
     </div>
     <!-- /.card-header -->
     <!-- form start -->
-    <form role="form" action="/jawaban/edit/{{ $jawaban->id }}" method="POST">
+    <form role="form" action="/jawaban/{{ $jawaban->id }}" method="POST">
         @csrf
+        @method('PUT')
         <input type="text" hidden id="judul" name="id" value="{{ $jawaban->id }}">
+        <input type="text" hidden id="judul" name="id_pertanyaan" value="{{ $jawaban->id_pertanyaan }}">
         <div class="card-body">
             <div class="form-group">
-                <label>Judul Pertanyaan</label>
+                <label>Judul Jawaban</label>
                 <input type="text" class="form-control" id="judul" name="judul" value="{{ $jawaban->judul }}">
             </div>
             <div class="form-group">
-                <label>Isi Pertanyaan</label>
+                <label>Isi Jawaban</label>
                 <input class="form-control" rows="3" name="isi" value="{{$jawaban->isi}}">
             </div>
         </div>

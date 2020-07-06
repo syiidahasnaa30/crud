@@ -6,8 +6,9 @@
     </div>
     <!-- /.card-header -->
     <!-- form start -->
-    <form role="form" action="/pertanyaan/edit/{{ $pertanyaan->id }}" method="POST">
+    <form role="form" action="/pertanyaan/{{ $pertanyaan->id }}" method="POST">
         @csrf
+        @method('PUT')
         <input type="text" hidden id="judul" name="id" value="{{ $pertanyaan->id }}">
         <div class="card-body">
             <div class="form-group">

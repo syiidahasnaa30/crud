@@ -27,8 +27,18 @@ class JawabanController extends Controller
    public function update($id, Request $request)
    {
       $data = $request->all();
+      $id_pertanyaan = $request->id_pertanyaan;
+      unset($data["_method"]);
       unset($data["_token"]);
       $jawaban = JawabanModels::editing($data);
-      return redirect('/pertanyaan');
+      return redirect('/jawaban/' . $id_pertanyaan);
+   }
+   public function destroy($id)
+   {
+      $jawaban = JawabanModels::find_by_id($id);
+      $id_pertanyaan = $jawaban->id_pertanyaan;
+      unset($jawaban);
+      JawabanModels::destroy($id);
+      return redirect('/jawaban/' . $id_pertanyaan);
    }
 }

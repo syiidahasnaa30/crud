@@ -37,8 +37,14 @@ class PertanyaanController extends Controller
     public function update($id, Request $request)
     {
         $data = $request->all();
+        unset($data["_method"]);
         unset($data["_token"]);
         $pertanyaan = PertanyaanModels::editing($data);
+        return redirect('/pertanyaan');
+    }
+    public function destroy($id)
+    {
+        PertanyaanModels::destroy($id);
         return redirect('/pertanyaan');
     }
 }

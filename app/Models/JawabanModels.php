@@ -31,4 +31,8 @@ class JawabanModels
         $new_jawaban = DB::table('jawaban')->where('id', $data["id"])->update($data);
         return $new_jawaban;
     }
+    public static function destroy($id)
+    {
+        DB::table('jawaban')->where('id', $id)->delete();
+    }
 }

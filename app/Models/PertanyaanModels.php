@@ -30,4 +30,8 @@ class PertanyaanModels
         $new_pertanyaan = DB::table('pertanyaan')->where('id', $data["id"])->update($data);
         return $new_pertanyaan;
     }
+    public static function destroy($id)
+    {
+        DB::table('pertanyaan')->where('id', $id)->delete();
+    }
 }

@@ -37,6 +37,7 @@
                 </tbody>
             </table>
         </div>
+        <a href="/pertanyaan" class="btn btn-primary">Daftar Pertanyaan</a>
     </div>
 </div>
 @endsection

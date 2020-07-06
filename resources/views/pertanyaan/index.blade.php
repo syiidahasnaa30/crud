@@ -12,7 +12,7 @@
                     <th style="width: 10px">#</th>
                     <th style="width:250px">list Pertanyaan</th>
                     <th style="width:300px">Jawaban Anda</th>
-                    <th style="width:150px">Action</th>
+                    <th style="width:120px">Action</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,8 +30,12 @@
                         </form>
                     </td>
                     <td><a href="/jawaban/{{ $tanya->id }}" class="badge bg-success">lihat jawaban</a>
-                        <a href="/pertanyaan/edit/{{ $tanya->id }}" class="badge bg-warning">Edit</a>
-                        <a href="/pertanyaan/delete/{{ $tanya->id }}" class="badge bg-danger">Hapus</a>
+                        <a href="/pertanyaan/edit/{{ $tanya->id }}" class="badge bg-warning"><i class="fas fa-edit"></i></a>
+                        <form action="/pertayaan/{{ $tanya->id }}" method="POST"  style="display: inline">
+                            @csrf
+                            @method('DELETE')
+                            <button class="badge bg-danger"><i class="fas fa-trash"></i></button>
+                        </form>
                         <a href="/pertanyaan/{{ $tanya->id }}" class="badge bg-info">detail</a>
                     </td>
                 </tr>
