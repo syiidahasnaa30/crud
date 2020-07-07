@@ -48,6 +48,7 @@
             @yield('editPertanyaan')
             @yield('editJawaban')
             @yield('detail')
+            @yield('content')
         </div>
         <!-- /.content-wrapper -->
 

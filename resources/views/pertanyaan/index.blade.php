@@ -12,7 +12,7 @@
                     <th style="width: 10px">#</th>
                     <th style="width:250px">list Pertanyaan</th>
                     <th style="width:300px">Jawaban Anda</th>
-                    <th style="width:120px">Action</th>
+                    <th style="width:140px">Action</th>
                 </tr>
             </thead>
             <tbody>
